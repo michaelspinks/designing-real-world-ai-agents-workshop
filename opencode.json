@@ -1,0 +1,17 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "deep-research": {
+      "type": "local",
+      "command": ["uv", "run", "fastmcp", "run", "src/research/server.py"],
+      "enabled": true,
+      "environment": { "ENV_FILE_PATH": ".env" }
+    },
+    "linkedin-writer": {
+      "type": "local",
+      "command": ["uv", "run", "fastmcp", "run", "src/writing/server.py"],
+      "enabled": true,
+      "environment": { "ENV_FILE_PATH": ".env" }
+    }
+  }
+}

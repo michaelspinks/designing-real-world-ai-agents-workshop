@@ -1,0 +1,23 @@
+[mcp_servers.deep-research]
+command = "uv"
+args = [
+    "run",
+    "fastmcp",
+    "run",
+    "src/research/server.py",
+]
+
+[mcp_servers.deep-research.env]
+ENV_FILE_PATH = ".env"
+
+[mcp_servers.linkedin-writer]
+command = "uv"
+args = [
+    "run",
+    "fastmcp",
+    "run",
+    "src/writing/server.py",
+]
+
+[mcp_servers.linkedin-writer.env]
+ENV_FILE_PATH = ".env"
