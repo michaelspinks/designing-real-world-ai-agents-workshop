@@ -1,5 +1,19 @@
 {
   "enabledPlugins": {
     "context7@claude-plugins-official": true
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "WebSearch|WebFetch",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo \"{\\\"hookSpecificOutput\\\":{\\\"hookEventName\\\":\\\"PreToolUse\\\",\\\"permissionDecision\\\":\\\"ask\\\",\\\"permissionDecisionReason\\\":\\\"This project prefers its own deep_research MCP server / research skill for research tasks. Use raw WebSearch/WebFetch only for quick single-fact lookups. Proceed?\\\"}}\"",
+            "statusMessage": "Checking research-tool preference..."
+          }
+        ]
+      }
+    ]
   }
 }

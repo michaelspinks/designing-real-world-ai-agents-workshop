@@ -42,6 +42,12 @@ project-root/
 ## Access Documentation
 Use the context7 MCP server to find out more about the tech stack usage and good practices.
 
+# Doing Research
+
+This project is built around a Deep Research Agent. For ANY research or investigation task, use this project's own tooling — the `deep_research` MCP server (or the `research` / `deep-research` skill) — not generic `WebSearch`/`WebFetch`. Reserve raw `WebSearch`/`WebFetch` for quick, single-fact lookups that don't warrant a research run, and even then prefer the project tooling when in doubt.
+
+More broadly: **before choosing tools for a task, check whether a project skill or MCP server already covers it.** A simple-looking request is not a reason to skip this check — that is exactly when the generic default wrongly wins.
+
 # Running QA
 
 We use ruff as our formatter and linter.
