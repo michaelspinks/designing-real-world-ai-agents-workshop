@@ -54,6 +54,17 @@ test-end-to-end: # Test research + writing end-to-end using the dataset sample.
 	make test-research-workflow
 	make test-writing-workflow
 
+# --- Rendering ---
+
+render-research: # Render outputs/$(SLUG)/research.md to both HTML and PDF (usage: make render-research SLUG=<slug>).
+	uv run python scripts/render_research.py --slug $(SLUG) --format both
+
+render-research-html: # Render outputs/$(SLUG)/research.md to a distribution-ready HTML file (usage: make render-research-html SLUG=<slug>).
+	uv run python scripts/render_research.py --slug $(SLUG) --format html
+
+render-research-pdf: # Render outputs/$(SLUG)/research.md to a reMarkable-2-sized PDF (usage: make render-research-pdf SLUG=<slug>).
+	uv run python scripts/render_research.py --slug $(SLUG) --format pdf
+
 # --- Dataset ---
 
 run-dataset-writing: # Run the full research + writing workflow on all dataset posts (output to test_all/).
